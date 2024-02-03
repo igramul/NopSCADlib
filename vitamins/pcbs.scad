@@ -967,6 +967,30 @@ LIPO_fuel_gauge = [
     [] // accessories
 ];
 
+TTP223 = [
+    "TTP223", "TTP223 capacitive touch tensor module",
+    14.5, 11, 1, // size
+    0, // corner radius
+    0, // mounting hole diameter
+    0, // pad around mounting hole
+    "red", // color
+    false, // true if parts should be separate BOM items
+    [], // hole positions
+    [ // components
+    [14.5-2,    11/2, 0,  "chip", 2, 3, 1.5, "Black" ],
+    [11.5,       1.2, 0,  "smd_led", LED0805, "red"],
+    [6,          1.2, 0,  "smd_res", RES0805, "121"],
+    [6,       11-1.2, 0,  "smd_cap", CAP0402],
+    [5,            8, 0,  "text", 0, 1.27, "GND"],
+    [5,         11/2, 0,  "text", 0, 1.27, "I/O"],
+    [5,            3, 0,  "text", 0, 1.27, "VCC"],
+    [14.5-11/2, 11/2, 90, "-text", 0, 1.27, "TOUCH"],
+    [10,        11/2, 90, "-text", 0, 10, chr(9675)],
+    ],
+    [], // accessories
+    [1.5, 3, 1, 3, silver], // grid
+];
+
 ESP32_DOIT_V1 = let(l = 51.45, w = 28.33, pitch = inch(1), pins = 15, poffset = inch(0.05)) [
     "ESP32_DOIT_V1", "ESP32 DOIT DEV KIT V1",
     l, w, 1.6, // Size
@@ -1218,7 +1242,7 @@ tiny_buck = pcb("tiny_buck", "Ultra Small 3A buck regulator", [20, 11, 1.6],
     ]
 );
 
-tiny_pcbs = [ESP_201, ESP_01M, XIAO, ESP_12F, MP1584EN, ESP_01,tiny_buck, LIPO_fuel_gauge];
+tiny_pcbs = [ESP_201, ESP_01M, XIAO, ESP_12F, MP1584EN, ESP_01,tiny_buck, LIPO_fuel_gauge, TTP223];
 
 big_pcbs = [BTT_RELAY_V1_2, BTT_SKR_MINI_E3_V2_0, BTT_SKR_E3_TURBO, BTT_SKR_V1_4_TURBO, DuetE, Duex5];
 
